@@ -36,7 +36,7 @@ const Login = () => {
             <input type="password" name="password" onChange={onChangeHandler} value={userLogin.password} />
 
             <button>Login</button>
-            <Link to={'/'}> Dont haven an account? Sign up here! </Link>
+            <Link to={'/register'}> Dont haven an account? Sign up here! </Link>
         </form>
     </div>
     )
