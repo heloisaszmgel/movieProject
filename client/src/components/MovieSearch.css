@@ -1,0 +1,40 @@
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .movie-card-body {
+    padding: 32px;
+  }
+  
+  .movie-title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .movie-year {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .movie-director,
+  .movie-actors {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  
+  .movie-poster {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 15%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .movie-card:hover .movie-poster {
+    transform: translateX(100%);
+  }
