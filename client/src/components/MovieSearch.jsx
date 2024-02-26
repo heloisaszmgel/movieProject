@@ -27,22 +27,24 @@ const MovieSearch = () => {
     }, [selectedMovie])
 
 return (
-    <div className="container">
-        <Navbar />
-        <form onSubmit={handleSubmit} className="my-4">
-            <div className="input-group">
-                <input type="text" className="form-control" value={searchTerm} onChange={e => setSearchTerm(e.target.value)}/>
-                <button type="submit" className="btn btn-primary">Search</button>
-            </div>
-        </form>
-        <ul className="list-unstyled">
-        {movies.map(movie => (
-          <li key={movie.imdbID} className="mb-2" onClick={() => setSelectedMovie(movie)}>
-            {movie.Title} ({movie.Year})
-          </li>
-        ))}
-      </ul>
-      {selectedMovie && <MovieDetails movie={selectedMovie} />}
+    <div>
+      <Navbar />
+      <div className="container">
+          <form onSubmit={handleSubmit} className="my-4">
+              <div className="input-group">
+                  <input type="text" className="form-control" value={searchTerm} onChange={e => setSearchTerm(e.target.value)}/>
+                  <button type="submit" className="btn btn-primary">Search</button>
+              </div>
+          </form>
+          <ul className="list-unstyled">
+          {movies.map(movie => (
+            <li key={movie.imdbID} className="mb-2" onClick={() => setSelectedMovie(movie)}>
+              {movie.Title} ({movie.Year})
+            </li>
+          ))}
+        </ul>
+        {selectedMovie && <MovieDetails movie={selectedMovie} />}
+      </div>
     </div>
   );
 };

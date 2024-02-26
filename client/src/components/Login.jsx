@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
+import Navbar from './NavBar'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -28,17 +29,20 @@ const Login = () => {
     };
 
     return (
-        <div className="login-container">
-            <form onSubmit={submitHandler}>
-                <label>Email:</label>
-                <input type="text" name="email" onChange={onChangeHandler} value={userLogin.email} />
+        <div>
+            <Navbar />
+            <div className="login-container">
+                <form onSubmit={submitHandler}>
+                    <label>Email:</label>
+                    <input type="text" name="email" onChange={onChangeHandler} value={userLogin.email} />
 
-                <label>Password:</label>
-                <input type="password" name="password" onChange={onChangeHandler} value={userLogin.password} />
+                    <label>Password:</label>
+                    <input type="password" name="password" onChange={onChangeHandler} value={userLogin.password} />
 
-                <button type="submit">Login</button>
-                <Link className="centered-link" to={'/register'} >Register here</Link>
-            </form>
+                    <button type="submit">Login</button>
+                    <Link className="centered-link" to={'/register'} >Register here</Link>
+                </form>
+            </div>
         </div>
     );
 };
