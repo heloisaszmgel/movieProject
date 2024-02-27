@@ -4,6 +4,7 @@ import Register from './components/Register'
 import HomePage from './components/HomePage'
 import Login from './components/Login'
 import MovieSearch from './components/MovieSearch'
+import Dashboard from './components/Dashboard'
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element = {<MovieSearch/>}/>
+          <Route index element = {<Dashboard/>}/>
+          <Route path='/moviesearch' element = {<MovieSearch/>}/>
           <Route path='/register' element = {< Register/>}/>
           <Route path='/homepage' element={<HomePage/>} />
           <Route path='/login' element={<Login/>} />
